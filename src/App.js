@@ -21,6 +21,14 @@ const rotateAnimation = keyframes`
   
 }` 
 ;
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+//Box 컴포넌트안에 Emoji 컴포넌트를 직접적으로 타겟팅 할 수 있다.
+//변수 ${Emoji} 로 써줄 수 있다.
+
+
+
 //${} 자바스크립트의 string interpolation 사용
 const Box = styled.div`
   height:200px;
@@ -31,13 +39,10 @@ const Box = styled.div`
   justify-content: center;
   animation: ${rotateAnimation} 1s linear infinite;
   //element target 처리 할 수 있다.
-  span{
-    font-size: 36px;
+  ${Emoji}{
+    font-size: 98px;
     &:hover{
     font-size: 40px;
-    }
-    &:active{
-      opacity: 0;
     }
   }
   //span:hover과 동일 
@@ -54,8 +59,9 @@ function App(){
   return (
         <Wrapper as="header">
           <Box>
-            <span>🫠</span>
+            <Emoji>🫠</Emoji>
           </Box>
+          <Emoji>❤️</Emoji>
         </Wrapper>
   );
 }
